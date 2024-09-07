@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 
 class GreetingController extends Controller
 {
-        //$array = [['朝','おはようございます。'],['昼','こんにちは'],['夕方','こんばんは'],['夜','おやすみなさい']];
+        // 単純メッセージ、配列に格納バージョンはコメントアウト中
+        // $array = [['朝','おはようございます。'],['昼','こんにちは'],['夕方','こんばんは'],['夜','おやすみなさい']];
         public function simple($time) {
             if ($time == 'mornning') {
             // $t = $array[0][0];
@@ -33,5 +34,10 @@ class GreetingController extends Controller
             $r = 'おやすみなさい';
             }
             return view('greeting.simple', ['t' => $t, 'r' => $r]);
-    }
+            }
+
+            // 自由なメッセージ
+        public function freeword($msg) {
+            return view('greeting.freeword', ['msg' => $msg]);
+        }
 }

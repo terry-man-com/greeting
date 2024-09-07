@@ -18,3 +18,6 @@ Route::get('/', function () {
 });
 // Route::<HTTPメソッド>('<アドレス>', [<コントローラーのクラス, 'アクション名>']);
 Route::get('/controller/comments/{time}', [App\Http\Controllers\GreetingController::class, 'simple']);
+
+//自由なメッセージ　ルーティング
+Route::get('/controller/comments/freeword/{msg}', [App\Http\Controllers\GreetingController::class, 'freeword']);
